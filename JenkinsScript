@@ -2,22 +2,23 @@ pipeline {
   agent any 
 
   stages {
-      stage ('Initial') {
+      stage ('Check OUT') {
         steps {
-          echo 'hello Jenkins'
+            git branch: 'master', credentialsId: 'ADirin', url:  'https://github.com/ADirin/myInvestmentJenkins.git'
+         
         }
 
       }
      stage ('Build') {
         steps {
-          echo 'build Complete'
+           bat 'mvn clean install'
         }
 
       }
 
     stage ('Testing') {
         steps {
-          echo 'ok'
+         
         }
 
       }
