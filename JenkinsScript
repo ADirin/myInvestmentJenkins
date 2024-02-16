@@ -20,6 +20,12 @@ pipeline {
         steps {
          echo 'mvn test '
         }
+        post {
+          success {
+            junit '**/target/surefire-reports/Test-'.xml'
+            jacoco(ExecPattern: '**/target/jacoco.exec')
+          }
+        }
 
       }
   }
