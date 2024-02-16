@@ -1,6 +1,6 @@
 pipeline {
   agent any 
-
+   PATH = "${env.PATH};C:\\Windows\\System32" // Update the PATH to include the directory of cmd.exe
   stages {
       stage('checkout') {
           steps{
@@ -8,6 +8,11 @@ pipeline {
           }
           
       } 
+      stage ('Build') {
+          steps{
+            bat 'mvn clean install'
+          }
+      }
     
   }
 
