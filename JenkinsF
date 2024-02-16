@@ -2,12 +2,13 @@ pipeline {
   agent any
   environment {
     PATH = "${env.PATH}; c:\\Windows\\System32"
+
   }
 
 stages {
   stage('Checkout') {
     steps {
-      git branch: 'master', credentialsId: 'ADirin', url: ' 
+      git branch: 'master', credentialsId: 'ADirin', url:https://github.com/ADirin/myInvestmentJenkins.git ' 
     }
   }
 }
