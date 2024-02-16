@@ -1,7 +1,6 @@
 pipeline {
   agent any 
-   PATH = "${env.PATH};C:\\Windows\\System32" // Update the PATH to include the directory of cmd.exe
-  stages {
+     stages {
       stage('checkout') {
           steps{
               git branch: 'master', credentialsId: 'ADirin',  url: 'https://github.com/ADirin/myInvestmentJenkins.git'
