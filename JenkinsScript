@@ -10,11 +10,17 @@ pipeline {
       }
      stage ('Build') {
         steps {
-          echo 'build Coplete'
+          echoo 'build Complete'
         }
 
       }
 
+    stage ('Testing') {
+        steps {
+          echo 'ok'
+        }
+
+      }
   }
 
 
